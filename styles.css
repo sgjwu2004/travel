@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --primary: #1f6feb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #d1d9e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(120deg, #0f172a, #1d4ed8);
+  color: #fff;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.topbar p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: calc(100vh - 90px);
+}
+
+.map-panel,
+.info-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.map-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+button {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.05);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#map {
+  width: 100%;
+  min-height: 640px;
+}
+
+.info-panel {
+  padding: 1rem;
+  overflow: auto;
+}
+
+.info-panel h2 {
+  margin: 0.75rem 0;
+  font-size: 1.05rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: #fbfdff;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.card p {
+  margin: 0.35rem 0;
+  line-height: 1.4;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.list li {
+  margin: 0.25rem 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.route-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 0.55rem 0;
+  padding: 0.55rem;
+  background: #fff;
+}
+
+.route-item strong {
+  color: #0f172a;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  #map {
+    min-height: 480px;
+  }
+}
